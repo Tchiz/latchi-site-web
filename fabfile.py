@@ -16,8 +16,9 @@ DEPLOY_PATH = env.deploy_path
 production = ''
 dest_path = ''
 
-# Github Pages configuration
-env.github_pages_branch = "gh-pages"
+# Git configuration
+env.github_name = "origin"
+env.local_branch = "master"
 
 # Port for `serve`
 PORT = 8000
@@ -64,19 +65,14 @@ def preview():
 
 @hosts(production)
 def publish():
-    """Publish to production server via ssh"""
+    """Publishing on GitHub and synology server"""
     rebuild()
-    # local("git push origin {github_pages_branch}".format(**env))
+    local("git checkout -q master")
+    local("git push {github_name} {local_branch} ".format(**env))
     project.rsync_project(
         remote_dir=dest_path,
-        exclude=[".DS_Store",".gitignore"],
+        exclude=[".DS_Store"],
         local_dir=DEPLOY_PATH.rstrip('/') + '/',
         delete=True,
         extra_opts='-c',
     )
-
-# def gh_pages():
-#     """Publish to GitHub Pages"""
-#     rebuild()
-#     local("ghp-import -b {github_pages_branch} {deploy_path}".format(**env))
-#     local("git push origin {github_pages_branch}".format(**env))
