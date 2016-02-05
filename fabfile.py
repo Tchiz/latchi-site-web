@@ -68,10 +68,9 @@ def publish():
     rebuild()
     local("git checkout -q master")
     local("git push {github_name} {local_branch} ".format(**env))
-    #minify css and html, deploy cool stuff !!
     project.rsync_project(
         remote_dir=dest_path,
-        exclude=[".DS_Store"],
+        exclude=[".*"],
         local_dir=DEPLOY_PATH.rstrip('/') + '/',
         delete=True,
         extra_opts='-c',
