@@ -27,11 +27,10 @@ def clean():
     """Remove generated files"""
     if os.path.isdir(DEPLOY_PATH):
         shutil.rmtree(DEPLOY_PATH)
-        os.makedirs(DEPLOY_PATH)
 
 def build():
     """Build local version of site"""
-    local('pelican -s pelicanconf.py')
+    local('pelican  -s pelicanconf.py')
 
 def rebuild():
     """`clean` then `build`"""
@@ -40,7 +39,7 @@ def rebuild():
 
 def regenerate():
     """Automatically regenerate site upon file modification"""
-    local('pelican -r -s pelicanconf.py')
+    local('pelican  -r -s pelicanconf.py')
 
 def serve():
     """Serve site at http://localhost:8000/"""
@@ -69,6 +68,7 @@ def publish():
     rebuild()
     local("git checkout -q master")
     local("git push {github_name} {local_branch} ".format(**env))
+    #minify css and html, deploy cool stuff !!
     project.rsync_project(
         remote_dir=dest_path,
         exclude=[".DS_Store"],
