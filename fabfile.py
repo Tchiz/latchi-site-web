@@ -13,8 +13,9 @@ env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
-production = ''
-dest_path = ''
+production = 'Cibee@88.174.237.132'
+commandline = 'sftp -P 6003'
+dest_path = 'web'
 
 # Git configuration
 env.github_name = "origin"
@@ -67,11 +68,14 @@ def publish():
     """Publishing on GitHub and synology server"""
     rebuild()
     local("git checkout -q master")
+    local("git fetch {github_name}")
     local("git push {github_name} {local_branch} ".format(**env))
-    project.rsync_project(
-        remote_dir=dest_path,
-        exclude=[".*"],
-        local_dir=DEPLOY_PATH.rstrip('/') + '/',
-        delete=True,
-        extra_opts='-c',
-    )
+    print 'connection à Synology : déploiement avec put après connection'
+    local('{commandline} {production}:{dest_path}')
+ #    project.rsync_project(
+        # remote_dir=dest_path,
+        # exclude=[".*"],
+        # local_dir=DEPLOY_PATH.rstrip('/') + '/',
+        # delete=True,
+        # extra_opts='-c',
+    # )
