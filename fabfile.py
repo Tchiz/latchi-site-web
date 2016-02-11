@@ -68,10 +68,10 @@ def publish():
     """Publishing on GitHub and synology server"""
     rebuild()
     local("git checkout -q master")
-    local("git fetch {github_name}")
+    local("git fetch {github_name}".format(**env))
     local("git push {github_name} {local_branch} ".format(**env))
     print 'connection à Synology : déploiement avec put après connection'
-    local('{commandline} {production}:{dest_path}')
+    local('{commandline} {production}:{dest_path}'.format(**env))
  #    project.rsync_project(
         # remote_dir=dest_path,
         # exclude=[".*"],
