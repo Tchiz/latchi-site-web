@@ -8,7 +8,7 @@ SITEURL = ''
 
 PATH = 'content'
 PLUGIN_PATHS = ['plugins','pelican-plugins']
-PLUGINS = ['optimize_images','yuicompressor']
+PLUGINS = ['optimize_images','yuicompressor','w3c_validate']
 
 TIMEZONE = 'Europe/Paris'
 

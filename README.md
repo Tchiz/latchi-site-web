@@ -19,6 +19,6 @@ By : Aurore de Amaral
 
 6. Dans ce nouveau répertoire, cloner les plugins
 	git clone https://github.com/getpelican/pelican-plugins.git
-	git clone https://github.com/auroredea/pelican-yuicompressor.git
+	git clone https://github.com/auroredea/pelican-yuicompressor.git plugins/
 
 7. Tester le tout avec `fab build && fab serve` et tester si le site s'affiche bien en local !
