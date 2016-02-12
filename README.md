@@ -11,7 +11,7 @@ By : Aurore de Amaral
 
 3. En ligne de commande :
 
-	`pip install pelican fabric markdown jinja2`
+	`pip install pelican fabric markdown jinja2` yuicompressor
 
 4. Vérifier que git est installé et que la clé publique fonctionne avec github (https://help.github.com/articles/testing-your-ssh-connection/)
 
