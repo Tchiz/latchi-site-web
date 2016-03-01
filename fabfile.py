@@ -5,6 +5,7 @@ import os
 import shutil
 import sys
 import SocketServer
+import paramiko
 
 from pelican.server import ComplexHTTPRequestHandler
 
@@ -12,10 +13,12 @@ from pelican.server import ComplexHTTPRequestHandler
 env.deploy_path = 'output'
 DEPLOY_PATH = env.deploy_path
 
+# Remote path configuration
+env.dest_path = 'web'
+DEST_PATH = env.dest_path
+
 # Remote server configuration
-production = 'Cibee@88.174.237.132'
-commandline = 'sftp -P 6003'
-dest_path = 'web'
+production = '88.174.237.132'
 
 # Git configuration
 env.github_name = "origin"
@@ -23,6 +26,8 @@ env.local_branch = "master"
 
 # Port for `serve`
 PORT = 8000
+# Port for `publish`
+PORTR = 6003
 
 def clean():
     """Remove generated files"""
@@ -70,9 +75,9 @@ def publish():
     local("git checkout -q master")
     local("git fetch {github_name}".format(**env))
     local("git push {github_name} {local_branch} ".format(**env))
-    print 'connection à Synology : déploiement avec put après connection'
-    local('{commandline} {production}:{dest_path}'.format(**env))
- #    project.rsync_project(
+    # print 'connection à Synology : déploiement avec put après connection'
+    local('sftp -P '+PORTR+' {production}:{dest_path}'.format(**env))
+#   project.rsync_project(
         # remote_dir=dest_path,
         # exclude=[".*"],
         # local_dir=DEPLOY_PATH.rstrip('/') + '/',
