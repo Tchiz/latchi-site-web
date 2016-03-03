@@ -20,8 +20,8 @@ DATE_FORMATS = {
 
 STATIC_PATHS = ['static']
 
-#THEME = 'theme'
-THEME = 'simple'
+THEME = 'theme'
+#THEME = 'simple'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
