@@ -1,4 +1,5 @@
 output/*
 *.pyc
+*.swp
 plugins/*
 pelican-plugins/*
