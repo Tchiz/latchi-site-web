@@ -5,13 +5,13 @@ By : Aurore de Amaral
 
 /!\ (Les procédures d'installations varient en fonction du système d'exploitation)
 
-1. Vérifier que python 2.7 est installé (`python --version`) et que la JRE java est installée, pour la compression JS/CSS (`java -version`)
+1. Vérifier que python 2.7 est installé (`python --version`) et que la JRE java est installée, pour la compression JS/CSS (`java -version`). Il faut aussi vérifier que `jpegtran` est installé, sinon l'installer avec les dépôts, pour la compression JPEG.
 
 2. Installer « pip » (paquet `python-pip`)
 
 3. En ligne de commande :
 
-	`pip install pelican fabric markdown jinja2 yuicompressor`
+	`pip install pelican fabric markdown jinja2 yuicompressor py_w3c`
 
 4. Vérifier que git est installé et que la clé publique fonctionne avec github (https://help.github.com/articles/testing-your-ssh-connection/)
 
