@@ -28,20 +28,20 @@
 				{% if TAG_FEED_RSS and tag %}
 				<link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
 				{% endif %}
-				<link rel="stylesheet" href="/theme/css/pure.css" />
-				<link rel="stylesheet" href="/theme/css/style.css" />
+				<link rel="stylesheet" href="{{ SITEURL }}/theme/css/pure.css" />
+				<link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css" />
 				{% endblock head %}
 </head>
 <body>
 	{% block header %}
-		<a href="/index.html"><header></header></a>
+	<a href="{{ SITEURL }}"><header></header></a>
 	{% endblock %}
 	{% block nav %}
 	<nav><ul>
-		<li><a href="/mes-creations.html">Mes créations</a></li>
-		<li><a href="/quest-ce-que-latchi.html">Qu'est-ce que LaTchi ?</a></a></li>
-		<li><a href="/qui-est-cibee.html">Qui est Cibee ?</a></li>
-		<li><a href="/blog.html">Mes pensées</a></li>
+		<li><a href="{{ SITEURL }}/mes-creations.html">Mes créations</a></li>
+		<li><a href="{{ SITEURL }}/quest-ce-que-latchi.html">Qu'est-ce que LaTchi ?</a></a></li>
+		<li><a href="{{ SITEURL }}/qui-est-cibee.html">Qui est Cibee ?</a></li>
+		<li><a href="{{ SITEURL }}/blog.html">Mes pensées</a></li>
 		<li><a href="#contact">Me contacter</a></li>
 	</ul></nav><!-- /#menu -->
 	{% endblock nav %}
@@ -49,7 +49,7 @@
 	{% endblock %}
 	<footer id="contact">
 		<h1>Me contacter</h1>
-		<img src="/theme/images/LaTchi-logo-contact.png" alt="LaTchi - logo" title="LaTchi - logo"/><br/>
+		<img src="{{ SITEURL }}/theme/images/LaTchi-logo-contact.png" alt="LaTchi - logo" title="LaTchi - logo"/><br/>
 			contact[at]latchi.fr<br/>
 			(changer [at] par @)<br/><br/>
 			<em>
