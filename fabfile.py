@@ -45,7 +45,7 @@ def rebuild():
 
 def regenerate():
     """Automatically regenerate site upon file modification"""
-    local('pelican -r -s pelicanconf.py')
+    local('pelican -v -r -s pelicanconf.py')
 
 def serve():
     """Serve site at http://localhost:8000/"""
