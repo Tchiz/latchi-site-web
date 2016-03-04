@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Tous les articles</h2>
 <div class="pure-g">
+<div class="pure-u-5-5">
+	<h2>Tous les articles</h2>
+	<p><a href="{{ SITEURL }}/archives.html">(Voir les archives)</a></p>
+</div>
 {% for article in articles_page.object_list %}
 	<div class="pure-u-5-5 article">
 		<h3 class="blog-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>

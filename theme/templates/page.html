@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block title %}{{ page.title }} - LaTchi{% endblock title %}
 {% block content %}
-{{ page.content }}
+<div class="pure-g">
+    <div class="pure-u-5-5">
+			{{ page.content }}
+		</div>
+</div>
 {% endblock content %}
