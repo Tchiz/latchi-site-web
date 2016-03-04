@@ -36,7 +36,7 @@ def clean():
 
 def build():
     """Build local version of site"""
-    local('pelican -s pelicanconf.py')
+    local('pelican -v -s pelicanconf.py')
 
 def rebuild():
     """`clean` then `build`"""
