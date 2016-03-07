@@ -22,7 +22,7 @@ STATIC_PATHS = ['static']
 
 THEME = 'theme'
 #THEME = 'simple'
-DIRECT_TEMPLATES = ['blog','categories','archives']
+DIRECT_TEMPLATES = ['blog']
 PAGINATED_DIRECT_TEMPLATES = ['blog']
 
 # Feed generation is usually not desired when developing
