@@ -19,9 +19,8 @@ By : Aurore de Amaral
 
 	`git clone https://github.com/Tchiz/latchi-site-web.git`
 
-6. Dans ce nouveau répertoire, cloner les plugins
+6. Dans ce nouveau répertoire, cloner le répertoire des plugins
 
-	`git clone https://github.com/getpelican/pelican-plugins.git`
-	`git clone https://github.com/auroredea/pelican-yuicompressor.git plugins/`
+	`git clone --recursive https://github.com/getpelican/pelican-plugins.git`
 
 7. Tester le tout avec `fab build && fab serve` et tester si le site s'affiche bien en local !
