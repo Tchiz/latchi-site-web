@@ -7,8 +7,8 @@ SITENAME = u'Latchi'
 SITEURL = ''
 
 PATH = 'content'
-PLUGIN_PATHS = ['plugins','pelican-plugins']
-PLUGINS = ['optimize_images','yuicompressor','w3c_validate']
+PLUGIN_PATHS = ['pelican-plugins']
+PLUGINS = ['yuicompressor','optimize_images','w3c_validate']
 
 TIMEZONE = 'Europe/Paris'
 
