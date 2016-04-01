@@ -36,7 +36,7 @@ def clean():
 
 def build():
     """Build local version of site"""
-    local('pelican -v -s pelicanconf.py')
+    local('pelican -s pelicanconf.py')
 
 def rebuild():
     """`clean` then `build`"""
@@ -45,7 +45,7 @@ def rebuild():
 
 def regenerate():
     """Automatically regenerate site upon file modification"""
-    local('pelican -v -r -s pelicanconf.py')
+    local('pelican -r -s pelicanconf.py')
 
 def serve():
     """Serve site at http://localhost:8000/"""
@@ -64,19 +64,22 @@ def reserve():
     build()
     serve()
 
+def check():
+    """Build and Check with plugins (w3c, optimizations of images and CSS/JS)"""
+    local('pelican -v -s pelicanconf.py')
+
 def preview():
     """Build production version of site"""
-    local('pelican -s publishconf.py')
+    local('pelican -v -s publishconf.py')
 
 @hosts(production)
 def publish():
     """Publishing on GitHub and synology server"""
-    rebuild()
+    preview()
     local("git checkout -q master")
-    local("git fetch {github_name}".format(**env))
     local("git push {github_name} {local_branch} ".format(**env))
     # print 'connection à Synology : déploiement avec put après connection'
-    local('sftp -P '+PORTR+' {production}:{dest_path}'.format(**env))
+    # local('sftp -P '+PORTR+' {production}:{dest_path}'.format(**env))
 #   project.rsync_project(
         # remote_dir=dest_path,
         # exclude=[".*"],

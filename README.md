@@ -5,6 +5,10 @@ By : Aurore de Amaral
 
 /!\ (Les procédures d'installations varient en fonction du système d'exploitation)
 
+0. Sur fedora, paquets à installer pour python:
+
+	`dnf install make automake gcc gcc-c++ kernel-devel redhat-rpm-config python-devel`
+
 1. Vérifier que python 2.7 est installé (`python --version`) et que la JRE java est installée, pour la compression JS/CSS (`java -version`). Il faut aussi vérifier que `jpegtran` et `optipng` est installé, sinon l'installer avec les dépôts, pour la compression JPEG/PNG.
 
 2. Installer « pip » (paquet `python-pip`)

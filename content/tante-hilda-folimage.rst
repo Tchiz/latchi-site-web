@@ -1,7 +1,7 @@
 Tante Hilda - Folimage
 ######################
 :date: 2014-03-12 13:01
-:author: Tchiz (noreply@blogger.com)
+:author: LaTchi
 :tags: Animation
 :slug: tante-hilda-folimage
 
