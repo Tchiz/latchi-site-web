@@ -12,14 +12,14 @@ Sur fedora, paquets à installer pour python:
 	`dnf install make automake gcc gcc-c++ kernel-devel redhat-rpm-config python-devel`
 =====
 
-1. Vérifier que python 2.7 est installé (`python --version`) et que la JRE java est installée, pour la compression JS/CSS (`java -version`). Il faut aussi vérifier que `jpegtran` et `optipng` est installé, sinon l'installer avec les dépôts, pour la compression JPEG/PNG.
+1. Vérifier que python 2.7 est installé (`python --version`) et que la JRE java est installée (Cibee:comment ?), pour la compression JS/CSS (`java -version`). Il faut aussi vérifier que `jpegtran` (Cibee:dnf ne connait pas) et `optipng` est installé, sinon l'installer avec les dépôts, pour la compression JPEG/PNG.
 
 2. Installer « pip » (paquet `python-pip`)
 
 3. En ligne de commande :
 
 	`pip install pelican fabric markdown jinja2 yuicompressor py_w3c`
-
+Cibee: ok mais erreur (voir screenshot)
 4. Vérifier que git est installé et que la clé publique fonctionne avec github (https://help.github.com/articles/testing-your-ssh-connection/)
 
 5. Cloner dans un répertoire le site web Pelican (les sources)
